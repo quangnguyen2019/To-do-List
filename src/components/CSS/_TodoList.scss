@@ -1,0 +1,25 @@
+.todo-list {
+    margin: 100px auto 0;
+    width: 560px;
+    background: #fff;
+    border-radius: 8px;
+    font-size: 24px;
+    
+    .header {
+        input {
+            width: 100%;
+            border: none;
+            padding: 20px 15px 20px 60px;
+            font-size: 25px;
+            box-sizing: border-box;
+            border-bottom: 1px solid #eee;
+            outline: none;
+            color: rgb(63, 63, 63);
+
+            &::placeholder {
+                color: rgb(231, 231, 231);
+                font-style: italic;
+            }
+        }
+    }
+}

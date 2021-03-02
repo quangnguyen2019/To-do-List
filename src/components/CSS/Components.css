@@ -1,0 +1,32 @@
+.todo-list {
+  margin: 100px auto 0;
+  width: 560px;
+  background: #fff;
+  border-radius: 8px;
+  font-size: 24px;
+}
+.todo-list .header input {
+  width: 100%;
+  border: none;
+  padding: 20px 15px 20px 60px;
+  font-size: 25px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eee;
+  outline: none;
+  color: #3f3f3f;
+}
+.todo-list .header input::placeholder {
+  color: #e7e7e7;
+  font-style: italic;
+}
+
+.todo-item {
+  padding: 15px 15px 15px 60px;
+  border-bottom: 1px solid #eee;
+}
+.todo-item-completed {
+  text-decoration: line-through;
+  color: #ddd;
+}
+
+/*# sourceMappingURL=Components.css.map */

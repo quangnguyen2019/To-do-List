@@ -1,0 +1,9 @@
+.todo-item {
+    padding: 15px 15px 15px 60px;
+    border-bottom: 1px solid #eee;
+
+    &-completed {
+        text-decoration: line-through;
+        color: #ddd;
+    }
+}

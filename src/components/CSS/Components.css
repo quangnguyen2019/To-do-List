@@ -21,12 +21,26 @@
 }
 
 .todo-item {
-  padding: 15px 15px 15px 60px;
+  padding: 15px 15px 15px 10px;
   border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  transition: all .3s;
+}
+.todo-item .icon {
+  width: 30px;
+  height: 30px;
+  opacity: 0.1;
 }
 .todo-item-completed {
   text-decoration: line-through;
   color: #ddd;
+}
+.todo-item-completed .icon {
+  opacity: 1;
+}
+.todo-item > p {
+  margin: 0 0 0 30px;
 }
 
 /*# sourceMappingURL=Components.css.map */

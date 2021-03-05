@@ -13,6 +13,7 @@ export default function TodoList() {
         { title: 'Nấu Ăn', completed: false },
         { title: 'Đi Dạo', completed: false },
     ]);
+    const [inputValue, setInputValue] = useState('');
 
     const clickItem = (index) => {
         setTodos([
@@ -33,6 +34,26 @@ export default function TodoList() {
         );
     }
 
+    const onKeyUp = (event) => {
+        let value = event.target.value;
+
+        if (event.key === "Enter" && value.trim() !== '') {
+            setTodos([
+                ...todos,
+                {
+                    title: value,
+                    completed: false
+                }
+            ]);
+
+            setInputValue('');
+        }
+    }
+
+    const onChange = (e) => {
+        setInputValue(e.target.value);
+    }
+
     const checkAllClassNames = classNames('icon', {
         'all-completed': numTodosDone(todos) === todos.length,
         'no-item': todos.length === 0
@@ -47,7 +68,13 @@ export default function TodoList() {
                     onClick={checkAllItem}
                     alt=''
                 />
-                <input type="text" placeholder="What needs to be done?" />
+                <input 
+                    type="text" 
+                    placeholder="What needs to be done?" 
+                    onKeyUp={onKeyUp}
+                    value={inputValue}
+                    onChange={onChange}
+                />
             </div>
 
             { todos.map((item, index) => 

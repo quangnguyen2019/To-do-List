@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import classNames from 'classnames';
 
 import TodoItem from './TodoItem';
 
 import './CSS/Components.css';
+
+import checkAll from '../img/check-all.svg';
 
 export default function TodoList() {
     const [todos, setTodos] = useState([
@@ -11,7 +14,7 @@ export default function TodoList() {
         { title: 'Đi Dạo', completed: false },
     ]);
 
-    function clickItem(index) {
+    const clickItem = (index) => {
         setTodos([
             ...todos.slice(0, index),
             {
@@ -21,10 +24,29 @@ export default function TodoList() {
             ...todos.slice(index + 1)
         ]);
     };
+
+    const checkAllItem = () => {
+        setTodos(
+            todos.length === numTodosDone(todos) ?
+                todos.map(item => { return { ...item, completed: false }}) :
+                todos.map(item => { return { ...item, completed: true }})
+        );
+    }
+
+    const checkAllClassNames = classNames('icon', {
+        'all-completed': numTodosDone(todos) === todos.length,
+        'no-item': todos.length === 0
+    })
     
     return(
         <div className="todo-list">
             <div className="header">
+                <img 
+                    src={checkAll} 
+                    className={checkAllClassNames}
+                    onClick={checkAllItem}
+                    alt=''
+                />
                 <input type="text" placeholder="What needs to be done?" />
             </div>
 
@@ -37,4 +59,10 @@ export default function TodoList() {
             )}
         </div>
     );
+}
+
+function numTodosDone(arr) {
+    return arr.reduce((sum, item) =>
+        item.completed ? sum + 1 : sum
+    , 0);
 }

@@ -1,0 +1,6 @@
+@mixin icon($value) {
+    width: $value;
+    height: $value;
+    opacity: 0.1;
+    margin-right: 22px;
+} 

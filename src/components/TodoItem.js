@@ -14,7 +14,7 @@ export default function TodoItem(props) {
         <div className={classNames("todo-item", {
             'todo-item-completed': item.completed
         })}>
-            <img className="icon" onClick={onClick} src={src} />
+            <img className="icon" onClick={onClick} src={src} alt='' />
             <p>{item.title}</p>
         </div>
     );

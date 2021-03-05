@@ -4,16 +4,34 @@
   background: #fff;
   font-size: 24px;
   box-shadow: 0px 2px 15px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+.todo-list .header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 20px 15px 20px 10px;
+}
+.todo-list .header .icon {
+  width: 33px;
+  height: 33px;
+  opacity: 0.1;
+  margin-right: 22px;
+}
+.todo-list .header .all-completed {
+  opacity: 0.6;
+}
+.todo-list .header .no-item {
+  opacity: 0;
 }
 .todo-list .header input {
   width: 100%;
   border: none;
-  padding: 20px 15px 20px 60px;
   font-size: 25px;
   box-sizing: border-box;
-  border-bottom: 1px solid #eee;
   outline: none;
   color: #3f3f3f;
+  border-radius: 8px 8px 0 0;
 }
 .todo-list .header input::placeholder {
   color: #e7e7e7;
@@ -21,7 +39,7 @@
 }
 
 .todo-item {
-  padding: 15px 15px 15px 10px;
+  padding: 15px 15px 15px 12px;
   border-bottom: 1px solid #eee;
   display: flex;
   align-items: center;
@@ -31,6 +49,7 @@
   width: 30px;
   height: 30px;
   opacity: 0.1;
+  margin-right: 22px;
 }
 .todo-item-completed {
   text-decoration: line-through;
@@ -40,7 +59,8 @@
   opacity: 1;
 }
 .todo-item > p {
-  margin: 0 0 0 30px;
+  margin: 0;
+  padding-bottom: 2px;
 }
 
 /*# sourceMappingURL=Components.css.map */

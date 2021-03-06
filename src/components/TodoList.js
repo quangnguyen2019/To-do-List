@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import classNames from 'classnames';
 
 import TodoItem from './TodoItem';
+import HeaderInput from './HeaderInput';
 
 import './CSS/Components.css';
-
-import checkAll from '../img/check-all.svg';
 
 export default function TodoList() {
     const [todos, setTodos] = useState([
@@ -13,7 +11,6 @@ export default function TodoList() {
         { title: 'Nấu Ăn', completed: false },
         { title: 'Đi Dạo', completed: false },
     ]);
-    const [inputValue, setInputValue] = useState('');
 
     const clickItem = (index) => {
         setTodos([
@@ -45,37 +42,17 @@ export default function TodoList() {
                     completed: false
                 }
             ]);
-
-            setInputValue('');
         }
     }
 
-    const onChange = (e) => {
-        setInputValue(e.target.value);
-    }
-
-    const checkAllClassNames = classNames('icon', {
-        'all-completed': numTodosDone(todos) === todos.length,
-        'no-item': todos.length === 0
-    })
-    
     return(
         <div className="todo-list">
-            <div className="header">
-                <img 
-                    src={checkAll} 
-                    className={checkAllClassNames}
-                    onClick={checkAllItem}
-                    alt=''
-                />
-                <input 
-                    type="text" 
-                    placeholder="What needs to be done?" 
-                    onKeyUp={onKeyUp}
-                    value={inputValue}
-                    onChange={onChange}
-                />
-            </div>
+            <HeaderInput 
+                todos={todos} 
+                onClick={checkAllItem} 
+                numTodosDone={numTodosDone}
+                onKeyUp={onKeyUp}
+            />
 
             { todos.map((item, index) => 
                 <TodoItem 

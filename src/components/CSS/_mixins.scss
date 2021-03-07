@@ -1,6 +1,6 @@
-@mixin icon($value) {
+@mixin icon($value, $margin-right, $opacity: 0.1) {
     width: $value;
     height: $value;
-    opacity: 0.1;
-    margin-right: 22px;
+    opacity: $opacity;
+    margin-right: $margin-right;
 } 

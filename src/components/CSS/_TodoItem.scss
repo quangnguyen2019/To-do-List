@@ -6,9 +6,10 @@
     display: flex;
     align-items: center;
     transition: all .3s;
+    position: relative;
 
     .icon {
-        @include icon(30px);
+        @include icon(30px, 22px);
     }
 
     &-completed {
@@ -23,5 +24,24 @@
     & > p {
         margin: 0;
         padding-bottom: 2px;
+    }
+
+    .close-icon {
+        @include icon(12px, 0, 0.5);
+
+        display: none;
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        transition: all .3s;
+        padding: 10px;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    &:hover .close-icon {
+        display: inline;
     }
 }

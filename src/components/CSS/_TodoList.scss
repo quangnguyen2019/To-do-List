@@ -13,13 +13,22 @@
         align-items: center;
         border-bottom: 1px solid #eee;
         padding: 17px 15px 17px 10px;
-
+        
         .icon {
             @include icon(33px, 22px);
+            transition: all .2s;
+            
+            &:hover {
+                opacity: 0.3;
+            }
         }
 
         .all-completed {
             opacity: 0.6;
+
+            &:hover {
+                opacity: 0.6;
+            }
         }
 
         .no-item {

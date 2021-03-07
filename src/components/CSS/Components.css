@@ -17,8 +17,15 @@
   height: 33px;
   opacity: 0.1;
   margin-right: 22px;
+  transition: all .2s;
+}
+.todo-list .header .icon:hover {
+  opacity: 0.3;
 }
 .todo-list .header .all-completed {
+  opacity: 0.6;
+}
+.todo-list .header .all-completed:hover {
   opacity: 0.6;
 }
 .todo-list .header .no-item {
@@ -71,7 +78,7 @@
   margin-right: 0;
   display: none;
   position: absolute;
-  top: 18px;
+  top: 15px;
   right: 18px;
   transition: all .3s;
   padding: 10px;

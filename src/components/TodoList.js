@@ -23,6 +23,13 @@ export default function TodoList() {
         ]);
     };
 
+    const destroyItem = (index) => {
+        setTodos([
+            ...todos.slice(0, index),
+            ...todos.slice(index + 1)
+        ]);
+    }
+
     const checkAllItem = () => {
         setTodos(
             todos.length === numTodosDone(todos) ?
@@ -36,11 +43,11 @@ export default function TodoList() {
 
         if (event.key === "Enter" && value.trim() !== '') {
             setTodos([
-                ...todos,
                 {
                     title: value,
                     completed: false
-                }
+                },
+                ...todos
             ]);
         }
     }
@@ -49,7 +56,7 @@ export default function TodoList() {
         <div className="todo-list">
             <HeaderInput 
                 todos={todos} 
-                onClick={checkAllItem} 
+                onClick={checkAllItem}
                 numTodosDone={numTodosDone}
                 onKeyUp={onKeyUp}
             />
@@ -58,7 +65,8 @@ export default function TodoList() {
                 <TodoItem 
                     item={item} 
                     key={index} 
-                    onClick={() => clickItem(index)}
+                    onClickIcon={() => clickItem(index)}
+                    onClickDestroy={() => destroyItem(index)}
                 />
             )}
         </div>

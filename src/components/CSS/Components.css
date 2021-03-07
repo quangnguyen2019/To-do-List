@@ -1,5 +1,5 @@
 .todo-list {
-  margin: 100px auto 0;
+  margin: 145px auto 0;
   width: 560px;
   background: #fff;
   font-size: 24px;
@@ -45,6 +45,7 @@
   align-items: center;
   transition: all .3s;
   position: relative;
+  color: #4D4D4D;
 }
 .todo-item .icon {
   width: 30px;

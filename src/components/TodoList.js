@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import TodoItem from './TodoItem';
 import HeaderInput from './HeaderInput';
@@ -6,11 +6,19 @@ import HeaderInput from './HeaderInput';
 import './CSS/Components.css';
 
 export default function TodoList() {
-    const [todos, setTodos] = useState([
-        { title: 'Đi Chơi', completed: true },
-        { title: 'Nấu Ăn', completed: false },
-        { title: 'Đi Dạo', completed: false },
-    ]);
+    // get to-do list from localStorage
+    const todoList = JSON.parse(localStorage.getItem('todosArr'));
+
+    const [todos, setTodos] = useState(
+        todoList ? todoList : []
+    );
+
+    useEffect(
+        () => {
+            localStorage.setItem('todosArr', JSON.stringify(todos));
+        }, 
+        [todos]
+    );
 
     const clickItem = (index) => {
         setTodos([

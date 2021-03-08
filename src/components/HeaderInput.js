@@ -42,6 +42,7 @@ export default function HeaderInput(props) {
                 onKeyUp={onKeyUpInput}
                 value={inputValue}
                 onChange={onChange}
+                autoFocus
             />
         </div>
     );

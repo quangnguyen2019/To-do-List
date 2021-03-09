@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
+import './CSS/Components.css';
+
 import TodoItem from './TodoItem';
 import HeaderInput from './HeaderInput';
+import FooterFilter from './FooterFilter';
 import { 
     numTodosDone, 
     checkAllItem, 
@@ -9,8 +12,6 @@ import {
     clickItem, 
     destroyItem 
 } from './Functions';
-
-import './CSS/Components.css';
 
 export default function TodoList() {
     // get to-do list from localStorage
@@ -44,6 +45,8 @@ export default function TodoList() {
                     onClickDestroy={() => destroyItem(todos, setTodos, index)}
                 />
             )}
+
+            <FooterFilter numItems={todos.length} />
         </div>
     );
 }

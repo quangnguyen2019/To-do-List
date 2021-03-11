@@ -84,11 +84,14 @@ export default function TodoList() {
                 })
             }
 
-            <FooterFilter 
-                numItems={todos.length} 
-                filterMode={filterMode}
-                setFilterMode={setFilterMode}
-            />
+            {
+                todos.length > 0 &&
+                <FooterFilter 
+                    numItems={todos.length} 
+                    filterMode={filterMode}
+                    setFilterMode={setFilterMode}
+                />
+            }
         </div>
     );
 }

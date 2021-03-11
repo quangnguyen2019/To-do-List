@@ -2,12 +2,21 @@ import React from 'react';
 import classNames from 'classnames';
 
 export default function FooterFilter(props) {
-    const { filterMode, setFilterMode, numItems } = props;
+    const { 
+        filterMode, setFilterMode, 
+        todos, setTodos, 
+        numTodosDone 
+    } = props;
+
+    const clearCompleted = () => {
+        const arrTemp = todos.filter(item => !item.completed);
+        setTodos(arrTemp);
+    }
 
     return(
         <div className="footer">
             <span className="items-left"> 
-                {numItems} {numItems > 1 ? 'items' : 'item'} left
+                {todos.length} {todos.length > 1 ? 'items' : 'item'} left
             </span>
 
             <div className="filter">
@@ -38,6 +47,13 @@ export default function FooterFilter(props) {
                     Completed 
                 </button>
             </div>
+
+            {
+                numTodosDone(todos) > 0 &&
+                <span className='clear-completed' onClick={clearCompleted}> 
+                    Clear completed 
+                </span>
+            }
         </div>
     );
 }

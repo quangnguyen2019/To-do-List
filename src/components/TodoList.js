@@ -87,9 +87,11 @@ export default function TodoList() {
             {
                 todos.length > 0 &&
                 <FooterFilter 
-                    numItems={todos.length} 
                     filterMode={filterMode}
+                    todos={todos}
+                    setTodos={setTodos}
                     setFilterMode={setFilterMode}
+                    numTodosDone={numTodosDone}
                 />
             }
         </div>

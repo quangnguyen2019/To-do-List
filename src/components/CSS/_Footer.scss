@@ -2,10 +2,7 @@
     font-size: 14px;
     padding: 14px;
     position: relative;
-    
-    .items-left {
-        color: #777;
-    }
+    color: #777;
     
     .filter {
         position: absolute;
@@ -29,6 +26,15 @@
         
         .active {
             border-color: rgba(250, 175, 175, 0.479);
+        }
+    }
+
+    .clear-completed {
+        float: right;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
         }
     }
 }

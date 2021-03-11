@@ -94,8 +94,6 @@
   font-size: 14px;
   padding: 14px;
   position: relative;
-}
-.footer .items-left {
   color: #777;
 }
 .footer .filter {
@@ -117,6 +115,13 @@
 }
 .footer .filter .active {
   border-color: rgba(250, 175, 175, 0.479);
+}
+.footer .clear-completed {
+  float: right;
+  cursor: pointer;
+}
+.footer .clear-completed:hover {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=Components.css.map */

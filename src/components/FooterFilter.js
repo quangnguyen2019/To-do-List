@@ -4,18 +4,6 @@ import classNames from 'classnames';
 export default function FooterFilter(props) {
     const { filterMode, setFilterMode, numItems } = props;
 
-    const filterAll = () => {
-        setFilterMode('all');
-    }
-
-    const filterActive = () => {
-        setFilterMode('active');
-    }
-
-    const filterCompleted = () => {
-        setFilterMode('completed');
-    }
-
     return(
         <div className="footer">
             <span className="items-left"> 
@@ -24,7 +12,7 @@ export default function FooterFilter(props) {
 
             <div className="filter">
                 <button 
-                    onClick={filterAll}
+                    onClick={() => setFilterMode('all')}
                     className={classNames('filter-mode filter-all', {
                         'active': filterMode === 'all'
                     })}
@@ -33,7 +21,7 @@ export default function FooterFilter(props) {
                 </button>
 
                 <button 
-                    onClick={filterActive}
+                    onClick={() => setFilterMode('active')}
                     className={classNames('filter-mode filter-active', {
                         'active': filterMode === 'active'
                     })}
@@ -42,7 +30,7 @@ export default function FooterFilter(props) {
                 </button>
 
                 <button 
-                    onClick={filterCompleted}
+                    onClick={() => setFilterMode('completed')}
                     className={classNames('filter-mode filter-completed', {
                         'active': filterMode === 'completed'
                     })}

@@ -93,9 +93,30 @@
 .footer {
   font-size: 14px;
   padding: 14px;
+  position: relative;
 }
 .footer .items-left {
   color: #777;
+}
+.footer .filter {
+  position: absolute;
+  top: 10px;
+  left: 160px;
+}
+.footer .filter .filter-mode {
+  color: #777;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  padding: 4px 10px;
+  margin: 0 8px;
+  outline: none;
+}
+.footer .filter .filter-mode:hover {
+  border-color: rgba(250, 175, 175, 0.479);
+}
+.footer .filter .active {
+  border-color: rgba(250, 175, 175, 0.479);
 }
 
 /*# sourceMappingURL=Components.css.map */

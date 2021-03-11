@@ -20,6 +20,7 @@ export default function TodoList() {
     const [todos, setTodos] = useState(
         todoList ? todoList : []
     );
+    const [filterMode, setFilterMode] = useState('all');
 
     useEffect(
         () => {
@@ -30,23 +31,64 @@ export default function TodoList() {
 
     return(
         <div className="todo-list">
-            <HeaderInput 
-                todos={todos} 
+            <HeaderInput
+                todos={todos}
                 onClick={() => checkAllItem(todos, setTodos)}
                 numTodosDone={numTodosDone}
                 onKeyUp={(event) => onKeyUp(todos, setTodos, event)}
             />
 
-            { todos.map((item, index) => 
-                <TodoItem 
-                    item={item} 
-                    key={index}
-                    onClickIcon={() => clickItem(todos, setTodos, index)}
-                    onClickDestroy={() => destroyItem(todos, setTodos, index)}
-                />
-            )}
+            {   
+                filterMode === 'all' &&
+                todos.map((item, index) => {
+                    return (
+                        <TodoItem 
+                            item={item} 
+                            key={index}
+                            onClickIcon={() => clickItem(todos, setTodos, index)}
+                            onClickDestroy={() => destroyItem(todos, setTodos, index)}
+                        />
+                    );
+                })
+            }
+            {   
+                filterMode === 'active' &&
+                todos.map((item, index) => {
+                    if (!item.completed) {
+                        return (
+                            <TodoItem 
+                                item={item} 
+                                key={index}
+                                onClickIcon={() => clickItem(todos, setTodos, index)}
+                                onClickDestroy={() => destroyItem(todos, setTodos, index)}
+                            />
+                        );
+                    }
+                    return true;
+                })
+            }
+            {   
+                filterMode === 'completed' &&
+                todos.map((item, index) => {
+                    if (item.completed) {
+                        return (
+                            <TodoItem 
+                                item={item} 
+                                key={index}
+                                onClickIcon={() => clickItem(todos, setTodos, index)}
+                                onClickDestroy={() => destroyItem(todos, setTodos, index)}
+                            />
+                        );
+                    }
+                    return true;
+                })
+            }
 
-            <FooterFilter numItems={todos.length} />
+            <FooterFilter 
+                numItems={todos.length} 
+                filterMode={filterMode}
+                setFilterMode={setFilterMode}
+            />
         </div>
     );
 }

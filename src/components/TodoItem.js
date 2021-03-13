@@ -33,13 +33,13 @@ export default function TodoItem(props) {
     return(
         <div
             className={classNames("todo-item", {
-                'todo-item-completed': item.completed
+                'todo-item-completed': item.completed && !isEditing
             })}
             onDoubleClick={() => setIsEditing(true)}
         >
             <img 
                 className="icon" 
-                onClick={onClickIcon} 
+                onClick={!isEditing && onClickIcon} 
                 src={checkCompleted} 
                 alt='' 
             />
@@ -55,14 +55,18 @@ export default function TodoItem(props) {
                         autoFocus 
                         onFocus={e => e.target.select()} 
                         onBlur={() => setIsEditing(false)}
+                        spellCheck='false'
                     />
             }
-            <img 
-                className='close-icon'
-                onClick={onClickDestroy} 
-                src={closeIcon} 
-                alt='' 
-            />
+            {
+                !isEditing &&
+                <img 
+                    className='close-icon'
+                    onClick={onClickDestroy} 
+                    src={closeIcon} 
+                    alt='' 
+                />
+            }
         </div>
     );
 }

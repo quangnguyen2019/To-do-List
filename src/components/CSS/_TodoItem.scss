@@ -13,6 +13,10 @@
         @include icon(30px, 22px);
     }
 
+    .no-toggle {
+        user-select: none;
+    }
+
     &-completed {
         text-decoration: line-through;
         color: #ddd;
@@ -24,7 +28,6 @@
 
     & > p {
         margin: 0;
-        padding-bottom: 2px;
     }
 
     .close-icon {
@@ -44,5 +47,14 @@
 
     &:hover .close-icon {
         display: inline;
+    }
+
+    .todo-title {
+        font-size: 24px;
+        outline: none;
+        border: none;
+        color: #e86363;
+        padding: 0;
+        width: 85%;
     }
 }

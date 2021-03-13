@@ -60,6 +60,9 @@
   opacity: 0.1;
   margin-right: 22px;
 }
+.todo-item .no-toggle {
+  user-select: none;
+}
 .todo-item-completed {
   text-decoration: line-through;
   color: #ddd;
@@ -69,7 +72,6 @@
 }
 .todo-item > p {
   margin: 0;
-  padding-bottom: 2px;
 }
 .todo-item .close-icon {
   width: 12px;
@@ -88,6 +90,14 @@
 }
 .todo-item:hover .close-icon {
   display: inline;
+}
+.todo-item .todo-title {
+  font-size: 24px;
+  outline: none;
+  border: none;
+  color: #e86363;
+  padding: 0;
+  width: 85%;
 }
 
 .footer {

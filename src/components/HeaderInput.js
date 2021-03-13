@@ -43,6 +43,7 @@ export default function HeaderInput(props) {
                 value={inputValue}
                 onChange={onChange}
                 autoFocus
+                spellCheck='false'
             />
         </div>
     );

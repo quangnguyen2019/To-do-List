@@ -45,6 +45,8 @@ export default function TodoList() {
                         <TodoItem 
                             item={item} 
                             key={index}
+                            todos={todos}
+                            setTodos={setTodos}
                             onClickIcon={() => clickItem(todos, setTodos, index)}
                             onClickDestroy={() => destroyItem(todos, setTodos, index)}
                         />
@@ -59,6 +61,8 @@ export default function TodoList() {
                             <TodoItem 
                                 item={item} 
                                 key={index}
+                                todos={todos}
+                                setTodos={setTodos}
                                 onClickIcon={() => clickItem(todos, setTodos, index)}
                                 onClickDestroy={() => destroyItem(todos, setTodos, index)}
                             />
@@ -75,6 +79,8 @@ export default function TodoList() {
                             <TodoItem 
                                 item={item} 
                                 key={index}
+                                todos={todos}
+                                setTodos={setTodos}
                                 onClickIcon={() => clickItem(todos, setTodos, index)}
                                 onClickDestroy={() => destroyItem(todos, setTodos, index)}
                             />

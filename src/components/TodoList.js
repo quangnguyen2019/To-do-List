@@ -100,6 +100,8 @@ export default function TodoList() {
                     numTodosDone={numTodosDone}
                 />
             }
+
+            <p className="info"> Double-click to edit a todo </p>
         </div>
     );
 }

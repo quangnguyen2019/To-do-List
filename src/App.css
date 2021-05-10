@@ -6,7 +6,8 @@
     position: absolute;
     margin: 0;
     top: -130px;
-    left: 562px;
+    width: 100%;
+    text-align: center;
     font-size: 100px;   
     font-weight: 400;
     color: #a51a1a2e;

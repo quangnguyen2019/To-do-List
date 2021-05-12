@@ -20,10 +20,10 @@
         .icon {
             @include icon(33px, 22px);
             transition: all .2s;
-            
-            &:hover {
-                opacity: 0.3;
-            }
+        }
+        
+        .icon-hover:hover {
+            opacity: 0.3;
         }
 
         .all-completed {

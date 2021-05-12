@@ -23,7 +23,9 @@ export default function HeaderInput(props) {
     }
 
     const checkAllClassNames = classNames('icon', {
-        'all-completed': numTodosDone(todos) === todos.length,
+        'icon-hover': todos.length,
+        'all-completed': 
+            numTodosDone(todos) === todos.length && todos.length > 0,
         'no-item': todos.length === 0
     })
 

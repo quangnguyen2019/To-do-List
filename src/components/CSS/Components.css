@@ -20,7 +20,7 @@
   margin-right: 22px;
   transition: all .2s;
 }
-.todo-list .header .icon:hover {
+.todo-list .header .icon-hover:hover {
   opacity: 0.3;
 }
 .todo-list .header .all-completed {

@@ -1,0 +1,21 @@
+@import '../CSS/mixins';
+
+.todo-list {
+    margin: 145px auto 80px;
+    width: 560px;
+    background: #fff;
+    font-size: 24px;
+    box-shadow: 
+        0px 2px 4px rgba(0, 0, 0, .2), 
+        0px 25px 30px rgba(0, 0, 0, .1);
+    border-radius: 8px;
+    position: relative;
+
+    .info {
+        position: absolute;
+        left: 210px;
+        bottom: -55px;
+        font-size: 12px;
+        color: #bfbfbf;
+    }
+}

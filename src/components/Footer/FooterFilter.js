@@ -1,6 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 
+import './Footer.scss';
+
 export default function FooterFilter(props) {
     const { 
         filterMode, setFilterMode, 

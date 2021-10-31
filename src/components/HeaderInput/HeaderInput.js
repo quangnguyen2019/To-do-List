@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 
-import checkAll from '../img/check-all.svg';
+import './HeaderInput.scss';
+import checkAll from 'img/check-all.svg';
 
 export default function HeaderInput(props) {
     const [inputValue, setInputValue] = useState('');
     const { todos, onClick, onKeyUp, numTodosDone } = props;
     
-
     const onKeyUpInput = (e) => {
         onKeyUp(e);
 

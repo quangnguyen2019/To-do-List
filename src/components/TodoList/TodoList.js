@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 
-import './CSS/Components.css';
+import './TodoList.scss';
 
-import TodoItem from './TodoItem';
-import HeaderInput from './HeaderInput';
-import FooterFilter from './FooterFilter';
+import TodoItem from 'components/TodoItem/TodoItem';
+import HeaderInput from 'components/HeaderInput/HeaderInput';
+import FooterFilter from 'components/Footer/FooterFilter';
 import { 
     numTodosDone, 
     checkAllItem, 
     onKeyUp, 
     clickItem, 
     destroyItem 
-} from './Functions';
+} from '../Functions';
 
 export default function TodoList() {
     // get to-do list from localStorage

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 
-import './CSS/Components.css';
+import './TodoItem.scss';
 
-import checkCompleted from '../img/check-completed.svg';
-import closeIcon from '../img/close.svg';
+import checkCompleted from 'img/check-completed.svg';
+import closeIcon from 'img/close.svg';
 
 export default function TodoItem(props) {
     const { item, todos, setTodos, onClickIcon, onClickDestroy } = props;
